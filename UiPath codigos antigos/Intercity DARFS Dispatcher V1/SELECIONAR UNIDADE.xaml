@@ -1,0 +1,501 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SELECIONAR_UNIDADE" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_Str_NomeEmpresa" Type="InArgument(x:String)" />
+    <x:Property Name="Out_Bool_SelecaoUnidadeSucesso" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1793,5852</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SELECIONAR_UNIDADE_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SELECIONAR_UNIDADE" sap:VirtualizedContainerService.HintSize="1266,5787" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap2010:Annotation.AnnotationText="Essa etapa irá selecionar a Unidade na aplicação Contas a Pagar." DisplayName="SELECIONAR UNIDADE" sap:VirtualizedContainerService.HintSize="1204,5699" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1142,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Seleção da Unidade iniciado.&quot;]" />
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="use application - Contas a Pagar" sap:VirtualizedContainerService.HintSize="1142,5384" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1108,5070" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - deletar empresa que está" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1046,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Text="%[k(Del)]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable CVScreenId="26c466fe-31d7-4ea3-ae6f-08b5675dedcd" CvElementArea="23, 68, 479, 22" CvType="InputBox" DesignTimeRectangle="481, 71, 17, 17" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd cls='TBtnWinControl' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TBtnWinControl' /&gt;" Guid="64ab9773-3763-406b-b0c0-89a7655c1435" InformativeScreenshot="39fee2331b880b1f8173cd9b3a046a2e.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TfrmLogEmpresa' title='Empresa' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="26c466fe-31d7-4ea3-ae6f-08b5675dedcd" CvTextArea="25, 52, 102, 14" CvTextArgument="Selecione a Empresa" CvType="Text" DesignTimeRectangle="25, 52, 102, 14" ElementType="Text" Guid="69dc87fc-8c1b-476b-b838-5f1d4e8970a6" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - escrever empresa" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1046,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Text="[In_Str_NomeEmpresa + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable CVScreenId="79575ea8-d4a4-4d9e-9cc8-71d24e165329" CvElementArea="25, 68, 476, 23" CvType="InputBox" DesignTimeRectangle="26, 69, 474, 21" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd cls='TwwDBLookupCombo' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TwwDBLookupCombo' /&gt;" Guid="20797a8d-13c4-40a7-a356-a6833815e307" InformativeScreenshot="e9478e81c8a2c220cd6bc2d55cf42907.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TfrmLogEmpresa' title='Empresa' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="79575ea8-d4a4-4d9e-9cc8-71d24e165329" CvTextArea="25, 52, 102, 14" CvTextArgument="Selecione a Empresa" CvType="Text" DesignTimeRectangle="25, 52, 102, 14" ElementType="Text" Guid="be3813aa-2b6c-48b0-af23-7284b592c0bb" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - confirmar" sap:VirtualizedContainerService.HintSize="1046,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable CVScreenId="46155999-fc70-4b96-8ba2-60f3f5423070" CvElementArea="149, 117, 88, 29" CvTextArea="181, 127, 53, 12" CvTextArgument="Confirmar" CvType="Button" DesignTimeRectangle="148, 117, 90, 30" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Confirmar' cls='TBitBtn' title='C&amp;amp;onfirmar' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Confirmar' cls='TBitBtn' title='C&amp;amp;onfirmar' check:text='C&amp;amp;onfirmar' /&gt;" Guid="45febee4-ea7b-44da-9e70-9f5a3e8d96ad" InformativeScreenshot="f19fb112efa31c79c728b2a230591fce.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TfrmLogEmpresa' title='Empresa' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="46155999-fc70-4b96-8ba2-60f3f5423070" CvElementArea="242, 117, 90, 30" CvType="Button" DesignTimeRectangle="241, 117, 90, 30" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Cancelar' cls='TBitBtn' title='&amp;amp;Cancelar' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Cancelar' cls='TBitBtn' title='&amp;amp;Cancelar' check:text='&amp;amp;Cancelar' /&gt;" Guid="ad99861e-fc8f-474c-9924-e121c9ad1b6f" SearchSteps="Selector, FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NCheckState DisplayName="Check App State - apareceu o popup?" sap:VirtualizedContainerService.HintSize="1046,907" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Timeout="5" Version="V3">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Apareceu" sap:VirtualizedContainerService.HintSize="450,658" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;PopUp lote de pagamento apareceu.&quot;]" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - ok" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CVScreenId="cd0f10aa-ac67-4614-8d5e-b3d8afc77348" CvElementArea="155, 92, 75, 25" CvTextArea="183, 98, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="155, 92, 75, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd cls='TButton' title='OK' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TButton' title='OK' check:text='OK' /&gt;" Guid="e875efbc-c109-4109-a16e-f465802b330e" InformativeScreenshot="058491a748f6df806f3cb437572f4a2b.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TMessageForm' title='Atenção' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="cd0f10aa-ac67-4614-8d5e-b3d8afc77348" CvTextArea="5, 6, 45, 14" CvTextArgument="Atencao" CvType="Text" DesignTimeRectangle="5, 6, 45, 14" ElementType="Text" Guid="2b4c17e7-4b8d-438c-b913-95f2fe7a87d7" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;PopUp fechado.&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Não Apareceu" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;PopUp lote de pagamento não apareceu.&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="0, 0, 386, 136" DesignTimeScaleFactor="1" FuzzySelectorArgument="[Nothing]" Guid="8b473bd4-6f47-4ecf-94bd-7e5d01d113aa" InformativeScreenshot="ec4d6756fb1b464daa6e490fed864a7e.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TMessageForm' title='Atenção' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="cd0f10aa-ac67-4614-8d5e-b3d8afc77348" CvTextArea="5, 6, 45, 14" CvTextArgument="Atencao" CvType="Text" DesignTimeRectangle="5, 6, 45, 14" ElementType="Text" Guid="c4a056cc-ce2f-4518-b89d-1652c10f687c" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+              <uix:NCheckState DisplayName="Check App State - apareceu seleção de hotel?" sap:VirtualizedContainerService.HintSize="1046,1193" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Timeout="2" Version="V3">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Apareceu" sap:VirtualizedContainerService.HintSize="450,944" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Seleção de hotel apareceu.&quot;]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - selecionar hotel" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,286" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Text="%[k(Down)][k(Down)][k(Enter)]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable CVScreenId="c67d0153-d6ab-4fb1-8287-b9ed44b3f491" CvElementArea="23, 68, 479, 23" CvType="InputBox" DesignTimeRectangle="481, 71, 17, 17" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;wnd cls='TBtnWinControl' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TBtnWinControl' /&gt;" Guid="a844a767-5b22-4d78-b383-52f8a7b966d1" InformativeScreenshot="f4677d7106128d37f2ba71ef16ea8f93.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TFrmLoginHotel_Padrao' title='Hotel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="c67d0153-d6ab-4fb1-8287-b9ed44b3f491" CvTextArea="25, 53, 168, 13" CvTextArgument="Selecione o Hotel para Trabalhar" CvType="Text" DesignTimeRectangle="25, 53, 168, 13" ElementType="Text" Guid="b785d0ad-1d42-41a2-bd94-c542eef3c058" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - confirmar" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CVScreenId="c67d0153-d6ab-4fb1-8287-b9ed44b3f491" CvElementArea="149, 117, 88, 29" CvTextArea="181, 126, 53, 12" CvTextArgument="Confirmar" CvType="Button" DesignTimeRectangle="148, 116, 90, 30" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Confirmar' cls='TBitBtn' title='C&amp;amp;onfirmar' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Confirmar' cls='TBitBtn' title='C&amp;amp;onfirmar' check:text='C&amp;amp;onfirmar' /&gt;" Guid="4c6f8d2b-db45-4c47-8c59-37238006f60b" InformativeScreenshot="6226f9d7720dc180a88a2a0e211deb36.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TFrmLoginHotel_Padrao' title='Hotel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="c67d0153-d6ab-4fb1-8287-b9ed44b3f491" CvElementArea="242, 116, 90, 30" CvType="Button" DesignTimeRectangle="241, 116, 90, 30" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Cancelar' cls='TBitBtn' title='&amp;amp;Cancelar' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Cancelar' cls='TBitBtn' title='&amp;amp;Cancelar' check:text='&amp;amp;Cancelar' /&gt;" Guid="dd23fe41-73a0-44c0-b924-a48c0d10de27" SearchSteps="Selector, FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Hotel selecionado.&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Não Apareceu" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Seleção de hotel não apareceu.&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="0, 0, 527, 157" DesignTimeScaleFactor="1" FuzzySelectorArgument="[Nothing]" Guid="96746a8e-e822-4215-a118-1923f70b39b3" InformativeScreenshot="9ed78dceb398b90a05dbd003ced6ff20.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TFrmLoginHotel_Padrao' title='Hotel' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="5358e6d2-3635-4bdf-b79c-dee6c22b474d" CvTextArea="25, 53, 168, 13" CvTextArgument="Selecione o Hotel para Trabalhar" CvType="Text" DesignTimeRectangle="25, 53, 168, 13" ElementType="Text" Guid="ad53f047-57e2-4cd9-924b-7a2f963b2eb4" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+              <uix:NCheckState DisplayName="Check App State - Sua licença temporária expirou" sap:VirtualizedContainerService.HintSize="1046,1541" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Timeout="2" Version="V4">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="popup apareceu" sap:VirtualizedContainerService.HintSize="450,1292" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;PopUp licença expirou apareceu.&quot;]" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - OK" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CVScreenId="5cfa37a5-78ef-4d8d-b7d9-0a57d1c6d47a" CvElementArea="346, 92, 75, 25" CvTextArea="374, 98, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="346, 92, 75, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd cls='TButton' title='OK' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TButton' title='OK' check:text='OK' /&gt;" Guid="e7ec5421-566b-45ea-872d-fbe5d35a19d8" InformativeScreenshot="5022b13ced4184e83705be621eaff357.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TMessageForm' title='* Registro de Versão *' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="5cfa37a5-78ef-4d8d-b7d9-0a57d1c6d47a" CvTextArea="61, 42, 166, 15" CvTextArgument="Sua licença temporária expirou." CvType="Text" DesignTimeRectangle="61, 42, 166, 15" ElementType="Text" Guid="a7059295-04cf-4642-8ee8-dc6f889d1966" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click -  sair" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CVScreenId="bce0dfd0-7f18-4e91-827d-19fa8f6880b8" CvElementArea="702, 492, 90, 32" CvTextArea="750, 502, 22, 11" CvTextArgument="Sair" CvType="Button" DesignTimeRectangle="702, 492, 90, 30" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Sair' cls='TBitBtn' title='&amp;amp;Sair' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Sair' cls='TBitBtn' title='&amp;amp;Sair' check:text='&amp;amp;Sair' /&gt;" Guid="b40811f4-742f-4c12-b043-a40ffe9f363c" InformativeScreenshot="0839231f0271ef845f3616b76f12c681.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TfrmLicenseManager' title='Registro de Produto TOTVS Hotéis' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="bce0dfd0-7f18-4e91-827d-19fa8f6880b8" CvElementArea="794, 492, 90, 32" CvType="Button" DesignTimeRectangle="794, 492, 90, 30" ElementType="Button" FullSelectorArgument="&lt;wnd aaname='Ajuda' cls='TmaHelpBitBtn' title='Aju&amp;amp;da' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Ajuda' cls='TmaHelpBitBtn' title='Aju&amp;amp;da' check:text='Aju&amp;amp;da' /&gt;" Guid="7e0dbade-a4a1-4091-a54a-6786624b8d2e" SearchSteps="Selector, FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - ok" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CVScreenId="05751450-8902-4152-aff7-29b0cadbebe1" CvElementArea="266, 92, 75, 25" CvTextArea="294, 98, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="266, 92, 75, 25" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd cls='TButton' title='OK' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TButton' title='OK' check:text='OK' /&gt;" Guid="74f763eb-b761-4e94-9edd-2fc512228205" InformativeScreenshot="732679eb9ce24a7dff4ecf5c06351a29.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TMessageForm' title='Atenção' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="05751450-8902-4152-aff7-29b0cadbebe1" CvTextArea="5, 6, 45, 14" CvTextArgument="Atenção" CvType="Text" DesignTimeRectangle="5, 6, 45, 14" ElementType="Text" Guid="bbfd201e-8efe-40d3-8692-170fba5bf9a2" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Durante a execução da empresa &quot; + In_Str_NomeEmpresa + &quot; o Robô identificou que a licença da mesma expirou, favor checar..&quot;]" DisplayName="Send SMTP Mail Message" Email="jimmybot@climec.com.br" EnableSSL="True" From="jimmybot@climec.com.br" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="Climec&amp;24" Port="465" SecureConnection="Auto" Server="mail.climec.com.br" Subject="Erro Execução Contas a Pagar" To="pedro.torres@one4.com.br">
+                      <ui:SendMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </ui:SendMail.Files>
+                    </ui:SendMail>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;PopUp licença expirou foi fechado, a execução do caso foi pausada e um email foi enviado para Intercity.&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="popup não apareceu" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;PopUp licença expirou não apareceu.&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable CVScreenId="5cfa37a5-78ef-4d8d-b7d9-0a57d1c6d47a" CvTextArea="61, 42, 166, 15" CvTextArgument="Sua licença temporária expirou." CvType="Text" DesignTimeRectangle="61, 42, 166, 15" DesignTimeScaleFactor="1" ElementType="Text" Guid="3b0789cd-26f4-4fff-9757-c041d33ddec6" InformativeScreenshot="47405f631140c2cf5f5bb3582642081c.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TMessageForm' title='* Registro de Versão *' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="5cfa37a5-78ef-4d8d-b7d9-0a57d1c6d47a" CvElementArea="346, 92, 75, 25" CvTextArea="374, 98, 18, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="346, 92, 75, 26" ElementType="Button" FullSelectorArgument="&lt;wnd cls='TButton' title='OK' /&gt;" FuzzySelectorArgument="&lt;wnd cls='TButton' title='OK' check:text='OK' /&gt;" Guid="36129fc0-af14-48f7-9a8e-7d4936ce36f7" SearchSteps="Selector, FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+              <uix:NCheckState DisplayName="check app state - selecionou com sucesso?" sap:VirtualizedContainerService.HintSize="1046,614" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="2032a7d4-4c43-4a80-aaa5-4c8ea31c9397" Timeout="2" Version="V3">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Entrou" sap:VirtualizedContainerService.HintSize="496,372" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Seleção de Unidade executada com sucesso!&quot;]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[Out_Bool_SelecaoUnidadeSucesso]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Não entrou" sap:VirtualizedContainerService.HintSize="496,372" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Seleção de Unidade apresentou uma falha na execução!&quot;]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[Out_Bool_SelecaoUnidadeSucesso]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable CVScreenId="fb24f482-043c-4579-9b12-8281ff76476e" CvTextArea="37, 34, 42, 12" CvTextArgument="Sistema" CvType="Text" DesignTimeRectangle="8, 31, 79, 19" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl role='menu item' automationid='' /&gt;" Guid="393c2d7f-2e7e-4b76-ab65-fa2c45b88f1b" InformativeScreenshot="9fc7e3967726433cbd9c65d83661b54b.png" ScopeSelectorArgument="&lt;wnd app='contasapagar.exe' cls='TfrmPrincipal' title='Contas a Pagar v12.01.2406.06' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="fb24f482-043c-4579-9b12-8281ff76476e" CvTextArea="116, 34, 67, 15" CvTextArgument="Lancamento" CvType="Text" DesignTimeRectangle="87, 31, 104, 19" FullSelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl idx='2' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl automationid='' role='menu item' /&gt;" Guid="5ecfcb0a-fda4-4504-9200-5cb2732cef31" SearchSteps="Selector, FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1936, 1056" FilePath="C:\Totvs\Hoteis\contasapagar.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASnSURBVFhHxZZ7TFtVHMe3+Kd/GrMYo0z/8U9fUSeP4VzY9A81PshUpgNXhqAz0zkoDKnKEBiPymtxWYJ/+BihY9BbHk42OmiHM2UgFFgLFMoeBbY5Ah2vvr7+zsF2994WY6ALN/mk33N6zvl+7znnnns3ANi4ngQFiMkQjhMt4WBrplbz6NvW++UeYoICRKcLzjdyz2BfZceaiC9oRezn9YjQWx+Re4gJFWDme62ZZOjL5XIhPz8fJpOJl51OJ1QqFSwWC4xGI4qKiuDxeFBrsCH2CwrQuooA6v8IYDAYUF1dDYVCwcu1tbXQaDRIS0vjdVVVVejq6rp3Aex2O5KSkvhd19XV8ZlgZbVaDaVSicTERDgcjrUFyPm5CwPjt1fkD7Md5rFb+FXQ83KneYz/9lHdxf5xrit0/asOMB11SIsXv2xYE2yM2HQKUG55WO4hJigAPT7xMelaVVjIEJLl48uRBIg8KDxAnZwEwoQ7Stn0hNhDjiRAdIawNyZDG2ogvJylwyuqZsR91YTthxu5Zr87qMz0tkwdduY0c/0Sad4vnY2lU4k95EgCUGN2gkmM/RxvGaQmQEe/AyfbR7hmO/1P6xTXam0fzPa/uS449Ze47wBVSUzFBAJEKXUPUuMlUccA0XQnivJ2fHvyEtKOGQM69ZiBw3RyxfIJyOurDLyPaIwnxaZiAgGoUbKog4QoGqyl6wo1A5pM49AYbVwb+if4LLCr8/IkKhv7uR52zGALPQm8//Iy5FJ1kDnjboBMoVVu7Ifdza7Cs0hU6/FW3u94k2Ca1b2e+xvXCcXn+B5geg+xVTqGVWwqhgeIVTZvokZuUQcJWw42YHRylpoCNR0jON05xrXl6jRK6nu5vrPgwgcleq7ZtZeWSTqO7jmqDh2AGqRIG0thS3Co+iIO/2TCh6V6fFTWzvWBE514J7+Va0ZcdhO8Ph8NCRTSRqRD7V9oGdKFQuYlxx/gnNxUTKxSgOP2HCan5/k6/3J+mOvBK9P49Acj11NEvqYHbo+XhqR3xtQsWnuuBSht6LNty/nxPuYnZkN0lu4hMllx+hns2bdcm+YwkxNnLnPdbbtJa34+8F82zcL4DSfujA5jqOgbDBXncmxVJXAtLGLJ7dkfFIDWJjWUqRg2hWwfMCLpjI+kHe4vi/9j5z87iGwTM7BVFqPtqQjon30cbc88hp6Pd8OzuMimJ1UWQNCzEy2huC1spNA5cGtmAbaKo9IQKe9TiAUW4hNxAKf/ZLsX10hZgSREd/K78CzcDcECzJ0yjvLGq7lmB/swXHoEI6V5oVHn4cLOF3iAQAjFLgoxz0OsOcBE42kadHPA4P/AQlxKiodnft69PgGe3gzLkSz4PB7nmgPMXx3HhK5uRa7X1+DCjucl5tbvsuHzeueoexwLcH13SRvKBTPKVkE5ffvJYfXdIzfhpU/43v1JfMqXzSNgLciBz+dj5tsJ2oSZwmsUwkQfIwPhgI5tc25N95x7aQm9n+2VmA8d/VpizgP4RRjZ43W73H0HFBLzYToR5eaMcAd4lfDO2UfhaNDAoV3mxtkWkHuQOSPcATYRCcR7IVj5dbx+YOM/zU2apNff1rkAAAAASUVORK5CYII=" InformativeScreenshot="2a2fee4c4077eb6222be6e4533baa172.png" Selector="&lt;wnd app='contasapagar.exe' cls='TfrmPrincipal' title='Contas a Pagar v12.01.2406.06' /&gt;" Title="Contas a Pagar v12.01.2406.06" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

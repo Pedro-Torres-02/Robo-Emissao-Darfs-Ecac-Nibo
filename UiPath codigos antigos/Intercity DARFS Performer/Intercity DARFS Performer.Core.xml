@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intercity DARFS Performer.Core</name>
+    </assembly>
+    <members>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.WorkflowTestCaseTemplate">
+            <summary>
+            Invokes the Tests/WorkflowTestCaseTemplate.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.ProcessTestCase">
+            <summary>
+            Invokes the Tests/ProcessTestCase.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.MainTestCase">
+            <summary>
+            Invokes the Tests/MainTestCase.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.InitAllApplicationsTestCase">
+            <summary>
+            Invokes the Tests/InitAllApplicationsTestCase.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.GetTransactionDataTestCase">
+            <summary>
+            Invokes the Tests/GetTransactionDataTestCase.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.TakeScreenshot(System.String,System.String)">
+            <summary>
+            Invokes the Framework/TakeScreenshot.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.RetryCurrentTransaction(System.Collections.Generic.Dictionary{System.String,System.Object},System.Exception,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Invokes the Framework/RetryCurrentTransaction.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.KillAllProcesses">
+            <summary>
+            Invokes the Framework/KillAllProcesses.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.InitAllSettings(System.String,System.String[])">
+            <summary>
+            Invokes the Framework/InitAllSettings.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.InitAllApplications(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Invokes the Framework/InitAllApplications.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.GetTransactionData(System.Int32,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.DataTable)">
+            <summary>
+            Invokes the Framework/GetTransactionData.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.CloseAllApplications">
+            <summary>
+            Invokes the Framework/CloseAllApplications.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.InitAllSettingsTestCase">
+            <summary>
+            Invokes the Tests/InitAllSettingsTestCase.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.SetTransactionStatus(UiPath.Core.BusinessRuleException,System.String,System.String,System.String,System.Exception,System.Collections.Generic.Dictionary{System.String,System.Object},UiPath.Core.QueueItem,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Invokes the Framework/SetTransactionStatus.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.Process(UiPath.Core.QueueItem,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Invokes the Framework/Process.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.Main(System.String,System.String)">
+            <summary>
+            Invokes the Main.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.LOGIN">
+            <summary>
+            Invokes the LOGIN.xaml
+            </summary>
+        </member>
+        <member name="M:IntercityDARFSPerformer.WorkflowRunnerService.ENTRAR_EM_RELAÇÃO_DE_DECLARAÇÕES">
+            <summary>
+            Invokes the ENTRAR EM RELAÇÃO DE DECLARAÇÕES.cs
+            </summary>
+        </member>
+    </members>
+</doc>
