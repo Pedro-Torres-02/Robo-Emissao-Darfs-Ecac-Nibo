@@ -1,0 +1,945 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ENTRAR_EM_RELAÇÃO_DE_DECLARAÇÕES" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_Str_NomeNibo" Type="InArgument(x:String)" />
+    <x:Property Name="In_Str_DataExecucao" Type="InArgument(x:String)" />
+    <x:Property Name="Out_Bool_EntrouDeclaracoes" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="In_Str_EcacCNPJEmpresa" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1793,2998</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ENTRAR_EM_RELAÇÃO_DE_DECLARAÇÕES_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ENTRAR_EM_RELAÇÃO_DE_DECLARAÇÕES" sap:VirtualizedContainerService.HintSize="1836,6782" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Str_DataApuracaoCapturada" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1832,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;A entrada na relação de declarações foi iniciada.&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome - eCAC" sap:VirtualizedContainerService.HintSize="1832,6586" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1798,6346" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[In_Str_NomeNibo.contains(&quot;COND&quot;) And Not In_Str_NomeNibo = &quot;COND  PAULISTA&quot;]" sap:VirtualizedContainerService.HintSize="1764,1508" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,1062" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Alterar perfil de acesso'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/" CVScreenId="001fb7b1-57bd-4b85-9bb1-c40cec879786" CvElementArea="660, 209, 142, 31" CvTextArea="690, 219, 105, 10" CvTextArgument="Alterar perfil de acesso" CvType="Button" DesignTimeRectangle="667, 211, 127, 27" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='btnPerfil' tag='SPAN' type='' class='' aaname='Alterar perfil de acesso' check:innerText='Alterar perfil de acesso' /&gt;" Guid="b251b367-1f42-426d-b623-d326a07b5081" InformativeScreenshot="7f1f8017f257f283711e2f5ca1118cc2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="001fb7b1-57bd-4b85-9bb1-c40cec879786" CvTextArea="256, 197, 105, 13" CvTextArgument="LOCALIZAR SERVIÇO" CvType="Text" DesignTimeRectangle="257, 199, 198, 10" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Localizar Serviço' check:innerText='LOCALIZAR SERVIÇO' /&gt;" Guid="6d4a975a-591a-46ad-9a90-b5974a4d2c2f" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Procurador de pessoa ju…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Text="[In_Str_EcacCNPJEmpresa.Replace(&quot;.&quot;, &quot;&quot;).Replace(&quot;-&quot;, &quot;&quot;).Replace(&quot;/&quot;, &quot;&quot;)]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/#" CVScreenId="eeefc9c7-a4ac-4314-b7f6-471ecccea7ce" CvElementArea="300, 376, 214, 20" CvType="InputBox" DesignTimeRectangle="301, 377, 212, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='txtNIPapel2' tag='INPUT' type='' class='cnpj textbox' aaname='Procurador de pessoa jurídica - CNPJ' /&gt;" Guid="a822d88c-2fb6-42ed-9412-53293802593a" InformativeScreenshot="736023c9ed0348bcf36a7ca6012859ee.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="eeefc9c7-a4ac-4314-b7f6-471ecccea7ce" CvTextArea="300, 363, 186, 11" CvTextArgument="Procurador de pessoa jurídica - CNPJ" CvType="Text" DesignTimeRectangle="301, 362, 350, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='formPJ' tag='LABEL' type='' class='' aaname='Procurador de pessoa jurídica - CNPJ' check:innerText='Procurador de pessoa jurídica - CNPJ' /&gt;" Guid="6e87c759-b1a4-406c-9b3c-a8f51873cd1f" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Alterar'" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/#" CVScreenId="1a2c9eb0-73bd-41ca-bd12-6bc2b01cf339" CvElementArea="1016, 541, 103, 21" CvTextArea="1050, 545, 35, 11" CvTextArgument="Alterar" CvType="Button" DesignTimeRectangle="1018, 543, 100, 18" DesignTimeScaleFactor="1" ElementType="Button" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl parentid='formPJ' tag='INPUT' type='button' class='submit' aaname='Alterar' check:text='Alterar' /&gt;" Guid="4f1daf1f-870f-45d1-bd9b-abca2e5161e0" ImageBase64="" InformativeScreenshot="c812d1e2d327295c057c052106f57002.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="1a2c9eb0-73bd-41ca-bd12-6bc2b01cf339" CvTextArea="792, 528, 186, 11" CvTextArgument="Procurador de pessoa jurídica - CNPJ" CvType="Text" DesignTimeRectangle="793, 527, 350, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='formPJ' tag='LABEL' type='' class='' aaname='Procurador de pessoa jurídica - CNPJ' check:innerText='Procurador de pessoa jurídica - CNPJ' /&gt;" Guid="dbde3a05-1758-40d2-b3df-0e546798d8c6" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="382,122" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Declarações e Demonstra…'" sap:VirtualizedContainerService.HintSize="382,216" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Default.aspx" CVScreenId="5e895427-c23c-4636-a2af-bb3b5ed8780c" CvElementArea="810, 267, 171, 29" CvTextArea="821, 276, 152, 14" CvTextArgument="Declarações e Demonstrativos" CvType="Button" DesignTimeRectangle="1003, 268, 165, 26" DesignTimeScaleFactor="1" ElementType="Text" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl parentid='btn214' tag='A' type='' class='' aaname='Declarações e Demonstrativos' /&gt;" Guid="fe506143-7c15-440c-b7f7-299dd0a90b19" ImageBase64="" InformativeScreenshot="8e788a65123437e3af7b1a3fe3645ad3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="f126150b-dc59-422a-98b9-cf1f23607e66" CvElementArea="623, 267, 170, 29" CvTextArea="648, 275, 122, 15" CvTextArgument="Cobrança e Fiscalização" CvType="Button" DesignTimeRectangle="627, 268, 165, 26" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='btn218' tag='A' type='' class='' aaname='Cobrança e Fiscalização' check:innerText='Cobrança e Fiscalização' /&gt;" Guid="be7d223b-5c9d-4298-aa9a-241c887e55ce" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Declarações e Demonstrativos" sap:VirtualizedContainerService.HintSize="382,216" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Timeout="30" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/" CVScreenId="98de8315-08e5-430f-a542-d196faeefa4d" CvElementArea="999, 267, 170, 29" CvTextArea="1009, 276, 152, 14" CvTextArgument="Declarações e Demonstrativos" CvType="Button" DesignTimeRectangle="1003, 268, 165, 26" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='btn214' tag='A' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl parentid='btn214' tag='A' type='' class='' aaname='Declarações e Demonstrativos' /&gt;" Guid="96ee8c17-9002-4951-b208-dd8705f58fa9" ImageBase64="" InformativeScreenshot="c6c0cceadb148b6c1d5907256ed13137.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="98de8315-08e5-430f-a542-d196faeefa4d" CvElementArea="811, 266, 170, 29" CvTextArea="835, 276, 124, 11" CvTextArgument="Conveniados e Parceiros" CvType="Button" DesignTimeRectangle="815, 268, 165, 26" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='btn293' tag='A' type='' class='' aaname='Conveniados e Parceiros' check:innerText='Conveniados e Parceiros' /&gt;" Guid="cdcaf5e2-fdc4-43f5-a2ec-0a66d813f1d0" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Assinar e Transmitir DCTF Web" sap:VirtualizedContainerService.HintSize="1764,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Default.aspx#" CVScreenId="fbc01712-a935-4739-bfd6-1c644857d84b" CvTextArea="1062, 427, 154, 11" CvTextArgument="Assinar e Transmitir DCTFWeb" CvType="Text" DesignTimeRectangle="1064, 427, 152, 12" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Assinar e Transmitir DCTFWeb' parentid='containerServicos214' tag='A' type='' class='' check:innerText='Assinar e Transmitir DCTFWeb' /&gt;" Guid="e9e25ff2-4556-4e88-86ad-3a585c25e065" InformativeScreenshot="8f750db57ce620c286a0a39d37f972c7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="fbc01712-a935-4739-bfd6-1c644857d84b" CvTextArea="1041, 399, 307, 15" CvTextArgument="DCTF - Declaração de Débitos e Créditos Tributários Federais" CvType="Text" DesignTimeRectangle="1040, 399, 308, 15" ElementType="Text" Guid="c12f3981-1e01-451c-9af6-cd3b71b8b6af" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State - apareceu captcha" sap:VirtualizedContainerService.HintSize="1764,4551" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Timeout="3" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence sap:VirtualizedContainerService.HintSize="586,3189" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="não apareceu" sap:VirtualizedContainerService.HintSize="552,3127" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Não apareceu captcha.&quot;]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Período Apuração Inicial'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Text="[&quot;01&quot; + In_Str_DataExecucao]" Version="V4">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="e4dd1c81-61ec-4d72-b7a9-4adcef3d2130" CvTextArea="26, 455, 62, 12" CvTextArgument="01/09/2024" CvType="Text" DesignTimeRectangle="23, 449, 138, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl id='txtDataInicio' tag='INPUT' type='text' class='span12 datepicker mascaraData hasDatepicker' aaname='' /&gt;" Guid="fc78c1a1-25ff-493d-bc2e-9742a2eeaf8a" InformativeScreenshot="05fb58b4e5a0d20be7b13d578b093e63.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CVScreenId="e4dd1c81-61ec-4d72-b7a9-4adcef3d2130" CvTextArea="22, 433, 122, 12" CvTextArgument="Período Apuração Inicial" CvType="Text" DesignTimeRectangle="23, 433, 120, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl parentid='conteudo-pagina' tag='LABEL' type='' class='control-label' aaname='Período Apuração Inicial' check:innerText='Período Apuração Inicial' /&gt;" Guid="153d6daa-f27c-4abe-90bf-a65e1aee5f60" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Período Apuração Inicial'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Text="[&quot;01&quot; + In_Str_DataExecucao]" Version="V4">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="894f50a8-4e5b-4314-86d2-f9c3eb8e4629" CvTextArea="175, 455, 62, 12" CvTextArgument="01/09/2024" CvType="Text" DesignTimeRectangle="172, 449, 138, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl id='txtDataFinal' tag='INPUT' type='text' class='span12 datepicker mascaraData hasDatepicker' aaname='' /&gt;" Guid="68339c1b-863d-480f-b1a1-52a8ffa0c74b" InformativeScreenshot="85fda1859542ff9e463b8342860f5276.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CVScreenId="894f50a8-4e5b-4314-86d2-f9c3eb8e4629" CvTextArea="171, 433, 117, 12" CvTextArgument="Período Apuração Final" CvType="Text" DesignTimeRectangle="172, 433, 115, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl aaname='Período Apuração Final' parentid='conteudo-pagina' tag='LABEL' type='' class='control-label' check:innerText='Período Apuração Final' /&gt;" Guid="1154390c-8c7d-4400-af91-e4a8b755c9d4" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Pesquisar'" sap:VirtualizedContainerService.HintSize="518,225" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="276dfbb7-4b1d-412b-a1ca-9f4280547b03" CvElementArea="790, 549, 78, 32" CvTextArea="799, 558, 59, 15" CvTextArgument="Pesquisar" CvType="Button" DesignTimeRectangle="791, 551, 75, 29" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl aaname='Pesquisar' parentid='conteudo-pagina' tag='A' type='' class='btn btn-success btn-exibe-processando' check:innerText='Pesquisar' /&gt;" Guid="71e5e022-1892-4561-81ab-2744f9a35301" InformativeScreenshot="1d9c3e66bf8cb385141cc31cd8f3f59c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CVScreenId="276dfbb7-4b1d-412b-a1ca-9f4280547b03" CvElementArea="745, 548, 46, 33" CvType="Button" DesignTimeRectangle="747, 551, 42, 29" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl isleaf='1' parentid='conteudo-pagina' tag='A' type='' class='btn btn-icon-sec btn-exibe-processando image-pesquisar' aaname='' /&gt;" Guid="7051e9b9-3a77-4229-9856-25e76ffb900d" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Serviços'" sap:VirtualizedContainerService.HintSize="518,225" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="9106c573-dc76-45a6-8298-2820d1b02d7b" CvElementArea="1636, 661, 37, 30" CvType="Button" DesignTimeRectangle="1638, 663, 35, 28" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='btn btn-table image-tabela-visualizacao btn-exibe-processando' aaname='Visualizar' /&gt;" Guid="49f4dedc-7396-40fa-9321-a43e6584703e" InformativeScreenshot="12debcfe8428380c95a9c331d7fae5e6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CVScreenId="9106c573-dc76-45a6-8298-2820d1b02d7b" CvElementArea="1627, 622, 284, 39" CvTextArea="1746, 632, 46, 14" CvTextArgument="Serviços" CvType="Button" DesignTimeRectangle="1627, 623, 285, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Serviços' type='' tag='TH' class='' check:innerText='Serviços' /&gt;" Guid="75538d72-7101-4187-bac1-9532e3631840" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NGetText DisplayName="Get Text 'Dados Cadastrais'" sap:VirtualizedContainerService.HintSize="518,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" TextString="[Str_DataApuracaoCapturada]" Version="V4">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="f988aec9-70dc-4350-b3d5-fa820f9f9b5d" CvTextArea="1532, 396, 156, 14" CvType="AnyWordGroup" DesignTimeRectangle="1533, 396, 155, 13" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl id='cphConteudo_TabelaVinculacoesDARF_InformacoesDCTF_lblPeriodoApuracao' tag='SPAN' type='' class='label-informacoes-contribuinte' /&gt;" Guid="cadf6ab8-40fb-4d25-a710-2d71e162e01c" InformativeScreenshot="ccb804439081ed42f2fc83c14de71e4f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="f988aec9-70dc-4350-b3d5-fa820f9f9b5d" CvElementArea="1376, 327, 18, 18" CvTextArea="1274, 329, 106, 13" CvTextArgument="Dados Cadastrais" CvType="ArrowButton" DesignTimeRectangle="1260, 320, 144, 32" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='A' type='' class='dropdown-toggle' aaname='Dados Cadastrais' check:innerText='Dados Cadastrais' /&gt;" Guid="a41b196d-d00b-49c8-aeb5-b6bc8bca6487" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <If Condition="[Str_DataApuracaoCapturada.contains(In_Str_DataExecucao.trim)]" sap:VirtualizedContainerService.HintSize="518,1676" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,340" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Competencia de apuração selecionada corretamente.&quot;]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_8">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[Out_Bool_EntrouDeclaracoes]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,1166" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Erro na competencia de apuração selecionada.&quot;]" />
+                          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Durante a execução da empresa &quot; + In_Str_NomeNibo + &quot; o Robô não conseguiu entrar na competência de apuração correta que deveria ser &quot; + In_Str_DataExecucao + &quot;.&quot;]" DisplayName="Send SMTP Mail Message" Email="jimmybot@climec.com.br" EnableSSL="True" From="jimmybot@climec.com.br" sap:VirtualizedContainerService.HintSize="450,178" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="False" Password="Climec&amp;24" Port="465" SecureConnection="Auto" Server="mail.climec.com.br" Subject="Erro ao selecionar competencia de apuração no ECAC." To="pedro.torres@one4.com.br">
+                            <ui:SendMail.Files>
+                              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                            </ui:SendMail.Files>
+                          </ui:SendMail>
+                          <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[Out_Bool_EntrouDeclaracoes]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Sair com Segurança'" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/" CVScreenId="ecf62f5c-de85-4c79-adb2-faf7b428b10e" CvElementArea="1797, 126, 114, 21" CvTextArea="1803, 130, 101, 13" CvTextArgument="Sair com Segurança" CvType="Button" DesignTimeRectangle="1798, 128, 112, 18" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='sairSeguranca' tag='SPAN' type='' class='botaoAzul' aaname='Sair com Segurança ' check:innerText='Sair com Segurança' /&gt;" Guid="6688e24f-09d5-4760-a4e5-a2aa42d58dfa" InformativeScreenshot="9eeeb6e8ac67e6b60489b48d0f939d57.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="ecf62f5c-de85-4c79-adb2-faf7b428b10e" CvTextArea="256, 206, 105, 12" CvTextArgument="LOCALIZAR SERVIÇO" CvType="Text" DesignTimeRectangle="257, 207, 1121, 10" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Localizar Serviço' check:innerText='LOCALIZAR SERVIÇO' /&gt;" Guid="650c14b9-24bd-4d83-b71e-c37a14fa780a" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: - ecac" sap:VirtualizedContainerService.HintSize="450,414" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" ScopeGuid="c67296d8-805a-4d69-9e55-fd2ea1a2fe5a" Version="V2">
+                            <uix:NApplicationCard.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:CloseApplication DisplayName="Close Application - ecac" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
+                                    <ui:CloseApplication.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b640ab3f-d709-4c48-ba15-dc8890f2d919">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:CloseApplication.Target>
+                                  </ui:CloseApplication>
+                                </Sequence>
+                              </ActivityAction>
+                            </uix:NApplicationCard.Body>
+                            <uix:NApplicationCard.TargetApp>
+                              <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="03f1b87999c0748cbf6c9114c12e3ced.jpg" Selector="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" Title="eCAC - Centro Virtual de Atendimento" Url="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" />
+                            </uix:NApplicationCard.TargetApp>
+                          </uix:NApplicationCard>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,50" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - &quot;olho&quot;" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="87fc8739-d35b-46bb-845d-5e490d891ddd" CvElementArea="1637, 662, 36, 29" CvType="Button" DesignTimeRectangle="1638, 693, 35, 28" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='btn btn-table image-tabela-visualizacao btn-exibe-processando' aaname='Visualizar' /&gt;" Guid="2e849a9c-c1d1-4213-9412-8a1f2fb412af" InformativeScreenshot="3113cfc6216adb23c9605b161d2d9a48.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CVScreenId="6a4b1e76-1e51-4ee5-be81-edba7afbfa9e" CvTextArea="92, 701, 43, 13" CvTextArgument="[In_Str_DataExecucao]" CvType="Text" DesignTimeRectangle="92, 701, 43, 13" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='7' tag='SPAN' aaname='{0}' /&gt;&quot;, In_Str_DataExecucao)]" FuzzyAccuracy="1" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' aaname='{0}' class='' check:text='{0}' /&gt;&quot;, In_Str_DataExecucao)]" Guid="4fb358d3-6406-486e-ac46-552727334a06" SearchSteps="Selector, FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                  </Sequence>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="apareceu" sap:VirtualizedContainerService.HintSize="1124,4309" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1090,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Apareceu captcha.&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click - sou humano" sap:VirtualizedContainerService.HintSize="1090,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="4466caf5-0059-4741-ab5b-0c6cda55f281" CvElementArea="36, 360, 36, 36" CvType="Icon" DesignTimeRectangle="39, 363, 30, 30" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl src='https://newassets.hcaptcha.com/captcha/v1/1183ae8/static/hcaptcha.html#frame=checkbox&amp;amp;id=0t48vionnitp&amp;amp;host=dctfweb.cav.receita.fazenda.gov.br&amp;amp;sentry=true&amp;amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;amp;recaptchacompat=true&amp;amp;custom=false&amp;amp;hl=pt&amp;amp;tplinks=on&amp;amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;amp;sitekey=bb355cbd-1a25-4e04-97d2-f8c76ff8fd5d&amp;amp;theme=light&amp;amp;origin=https%3A%2F%2Fdctfweb.cav.receita.fazenda.gov.br' tag='IFRAME' /&gt;&lt;webctrl id='checkbox' tag='DIV' type='' class='' aaname='' /&gt;" Guid="312c94d1-de3b-4c85-a901-a93c04e99a3f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAChSURBVFhH7ZcxDgMhDATz/44vUPER/kJHT0M0kUDc1iFxscVIIFvsyFR+jTFmBGKK9N5nrXXmnGdK6Qq8TQZZZ/YWoVBK+TS11h5N34S3ySDrlNkiFGHdb6N5W4SR3ZyEQhaZ675F+L91/hVnpkXAIopFFIsoFlEsolhEsYhiEcUiSmyRMOtEmAUrzMoJFGhiZPzfDXibjFMCHiL/JIjImG+X1zYs6po/ugAAAABJRU5ErkJggg==" InformativeScreenshot="2e29d86eee74160561fe4f90ee48de4b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="4466caf5-0059-4741-ab5b-0c6cda55f281" CvTextArea="83, 372, 79, 13" CvTextArgument="Sou humano" CvType="Text" DesignTimeRectangle="84, 368, 79, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl src='https://newassets.hcaptcha.com/captcha/v1/1183ae8/static/hcaptcha.html#frame=checkbox&amp;amp;id=0t48vionnitp&amp;amp;host=dctfweb.cav.receita.fazenda.gov.br&amp;amp;sentry=true&amp;amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;amp;recaptchacompat=true&amp;amp;custom=false&amp;amp;hl=pt&amp;amp;tplinks=on&amp;amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;amp;sitekey=bb355cbd-1a25-4e04-97d2-f8c76ff8fd5d&amp;amp;theme=light&amp;amp;origin=https%3A%2F%2Fdctfweb.cav.receita.fazenda.gov.br' tag='IFRAME' /&gt;&lt;webctrl id='label' tag='DIV' type='' class='' aaname='Sou humano' check:innerText='Sou humano' /&gt;" Guid="6da99530-6b5d-4d45-9712-99b87cae9f84" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="Label 'Label '082024''" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="8305e4de-dcab-47bc-8ebe-adca2e7b2020" ContentHash="GITqZ8SEFEuz-2r1FR4Lsg" DesignTimeRectangle="92, 701, 43, 13" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='' aaname='{0}' check:innerText='&amp;apos;{0}&amp;apos;' /&gt;&quot;, In_Str_DataExecucao)]" Guid="5131b5e4-54e4-47ad-ae11-0955d9b350f4" InformativeScreenshot="c6bec128f6512485cff9817f948473d3.png" Reference="zP9uCXjDRkqf-k3lmYOn9A/n69QncZD9k6UFuuJMXRs9g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CVScreenId="8305e4de-dcab-47bc-8ebe-adca2e7b2020" CvTextArea="32, 596, 187, 20" CvTextArgument="Relação de Declarações" CvType="Text" DesignTimeRectangle="23, 596, 205, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl type='' tag='H1' class='titulo-pagina' aaname='Relação de Declarações' check:innerText='Relação de Declarações' /&gt;" Guid="d4fa50c4-78bd-4ee9-bb70-1dd2552df264" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:VerifyExecutionOptions.Target>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="1090,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click - prosseguir " sap:VirtualizedContainerService.HintSize="1090,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="b913e18c-6a37-4d29-a9df-b23fb0339aa0" CvElementArea="21, 420, 84, 32" CvTextArea="31, 430, 65, 14" CvTextArgument="Prosseguir" CvType="Button" DesignTimeRectangle="23, 422, 81, 29" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='A' type='' class='btn btn-primary' aaname='                  Prosseguir                 ' check:innerText='Prosseguir' /&gt;" Guid="6c520ee5-fdfe-43ae-9f5c-452e8bacf74c" InformativeScreenshot="084d1bf8c662ac76cbbd4f7fb35803c9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="b913e18c-6a37-4d29-a9df-b23fb0339aa0" CvTextArea="83, 372, 79, 13" CvTextArgument="Sou humano" CvType="Text" DesignTimeRectangle="84, 368, 79, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl src='https://newassets.hcaptcha.com/captcha/v1/70b4624/static/hcaptcha.html#frame=checkbox&amp;amp;id=0b4ljclcfcu5&amp;amp;host=dctfweb.cav.receita.fazenda.gov.br&amp;amp;sentry=true&amp;amp;reportapi=https%3A%2F%2Faccounts.hcaptcha.com&amp;amp;recaptchacompat=true&amp;amp;custom=false&amp;amp;hl=pt&amp;amp;tplinks=on&amp;amp;pstissuer=https%3A%2F%2Fpst-issuer.hcaptcha.com&amp;amp;sitekey=bb355cbd-1a25-4e04-97d2-f8c76ff8fd5d&amp;amp;theme=light&amp;amp;origin=https%3A%2F%2Fdctfweb.cav.receita.fazenda.gov.br' tag='IFRAME' /&gt;&lt;webctrl id='label' tag='DIV' type='' class='' aaname='Sou humano' check:innerText='Sou humano' /&gt;" Guid="5e89bc8c-3634-495f-8b65-19ca49464281" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State - passou captcha" sap:VirtualizedContainerService.HintSize="1090,3500" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="passou" sap:VirtualizedContainerService.HintSize="552,3218" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Passou captcha.&quot;]" />
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Período Apuração Inicial'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Text="[&quot;01&quot; + In_Str_DataExecucao]" Version="V4">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="e4dd1c81-61ec-4d72-b7a9-4adcef3d2130" CvTextArea="26, 455, 62, 12" CvTextArgument="01/09/2024" CvType="Text" DesignTimeRectangle="23, 449, 138, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl id='txtDataInicio' tag='INPUT' type='text' class='span12 datepicker mascaraData hasDatepicker' aaname='' /&gt;" Guid="fc78c1a1-25ff-493d-bc2e-9742a2eeaf8a" InformativeScreenshot="05fb58b4e5a0d20be7b13d578b093e63.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="e4dd1c81-61ec-4d72-b7a9-4adcef3d2130" CvTextArea="22, 433, 122, 12" CvTextArgument="Período Apuração Inicial" CvType="Text" DesignTimeRectangle="23, 433, 120, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl parentid='conteudo-pagina' tag='LABEL' type='' class='control-label' aaname='Período Apuração Inicial' check:innerText='Período Apuração Inicial' /&gt;" Guid="153d6daa-f27c-4abe-90bf-a65e1aee5f60" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Período Apuração Inicial'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,250" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Text="[&quot;01&quot; + In_Str_DataExecucao]" Version="V4">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="894f50a8-4e5b-4314-86d2-f9c3eb8e4629" CvTextArea="175, 455, 62, 12" CvTextArgument="01/09/2024" CvType="Text" DesignTimeRectangle="172, 449, 138, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl id='txtDataFinal' tag='INPUT' type='text' class='span12 datepicker mascaraData hasDatepicker' aaname='' /&gt;" Guid="68339c1b-863d-480f-b1a1-52a8ffa0c74b" InformativeScreenshot="85fda1859542ff9e463b8342860f5276.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="894f50a8-4e5b-4314-86d2-f9c3eb8e4629" CvTextArea="171, 433, 117, 12" CvTextArgument="Período Apuração Final" CvType="Text" DesignTimeRectangle="172, 433, 115, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl aaname='Período Apuração Final' parentid='conteudo-pagina' tag='LABEL' type='' class='control-label' check:innerText='Período Apuração Final' /&gt;" Guid="1154390c-8c7d-4400-af91-e4a8b755c9d4" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Pesquisar'" sap:VirtualizedContainerService.HintSize="518,225" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="276dfbb7-4b1d-412b-a1ca-9f4280547b03" CvElementArea="790, 549, 78, 32" CvTextArea="799, 558, 59, 15" CvTextArgument="Pesquisar" CvType="Button" DesignTimeRectangle="791, 551, 75, 29" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl aaname='Pesquisar' parentid='conteudo-pagina' tag='A' type='' class='btn btn-success btn-exibe-processando' check:innerText='Pesquisar' /&gt;" Guid="71e5e022-1892-4561-81ab-2744f9a35301" InformativeScreenshot="1d9c3e66bf8cb385141cc31cd8f3f59c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="276dfbb7-4b1d-412b-a1ca-9f4280547b03" CvElementArea="745, 548, 46, 33" CvType="Button" DesignTimeRectangle="747, 551, 42, 29" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl isleaf='1' parentid='conteudo-pagina' tag='A' type='' class='btn btn-icon-sec btn-exibe-processando image-pesquisar' aaname='' /&gt;" Guid="7051e9b9-3a77-4229-9856-25e76ffb900d" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Serviços'" sap:VirtualizedContainerService.HintSize="518,225" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="9106c573-dc76-45a6-8298-2820d1b02d7b" CvElementArea="1636, 661, 37, 30" CvType="Button" DesignTimeRectangle="1638, 663, 35, 28" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='btn btn-table image-tabela-visualizacao btn-exibe-processando' aaname='Visualizar' /&gt;" Guid="49f4dedc-7396-40fa-9321-a43e6584703e" InformativeScreenshot="12debcfe8428380c95a9c331d7fae5e6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="9106c573-dc76-45a6-8298-2820d1b02d7b" CvElementArea="1627, 622, 284, 39" CvTextArea="1746, 632, 46, 14" CvTextArgument="Serviços" CvType="Button" DesignTimeRectangle="1627, 623, 285, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Serviços' type='' tag='TH' class='' check:innerText='Serviços' /&gt;" Guid="75538d72-7101-4187-bac1-9532e3631840" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,57" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - &quot;olho&quot;" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="87fc8739-d35b-46bb-845d-5e490d891ddd" CvElementArea="1637, 662, 36, 29" CvType="Button" DesignTimeRectangle="1638, 693, 35, 28" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='btn btn-table image-tabela-visualizacao btn-exibe-processando' aaname='Visualizar' /&gt;" Guid="2e849a9c-c1d1-4213-9412-8a1f2fb412af" InformativeScreenshot="3113cfc6216adb23c9605b161d2d9a48.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="6a4b1e76-1e51-4ee5-be81-edba7afbfa9e" CvTextArea="92, 701, 43, 13" CvTextArgument="[In_Str_DataExecucao]" CvType="Text" DesignTimeRectangle="92, 701, 43, 13" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='7' tag='SPAN' aaname='{0}' /&gt;&quot;, In_Str_DataExecucao)]" FuzzyAccuracy="1" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' aaname='{0}' class='' check:text='{0}' /&gt;&quot;, In_Str_DataExecucao)]" Guid="4fb358d3-6406-486e-ac46-552727334a06" SearchSteps="Selector, FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - &quot;olho&quot;" sap:VirtualizedContainerService.HintSize="382,216" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="87fc8739-d35b-46bb-845d-5e490d891ddd" CvElementArea="1637, 662, 36, 29" CvType="Button" DesignTimeRectangle="1638, 693, 35, 28" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='btn btn-table image-tabela-visualizacao btn-exibe-processando' aaname='Visualizar' /&gt;" Guid="2e849a9c-c1d1-4213-9412-8a1f2fb412af" InformativeScreenshot="3db6da373ba2ffa7e48191347195be00.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="87fc8739-d35b-46bb-845d-5e490d891ddd" DesignTimeRectangle="92, 701, 43, 13" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='' aaname='{0}' check:innerText='{0}' /&gt;&quot;, In_Str_DataExecucao)]" Guid="4fb358d3-6406-486e-ac46-552727334a06" ImageBase64="" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - &quot;olho&quot;" sap:VirtualizedContainerService.HintSize="382,216" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="87fc8739-d35b-46bb-845d-5e490d891ddd" CvElementArea="1637, 662, 36, 29" CvType="Button" DesignTimeRectangle="1638, 663, 35, 28" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='btn btn-table image-tabela-visualizacao btn-exibe-processando' aaname='Visualizar' /&gt;" Guid="2e849a9c-c1d1-4213-9412-8a1f2fb412af" InformativeScreenshot="458ddae130dcb3618f4afc35df2a7b8a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="87fc8739-d35b-46bb-845d-5e490d891ddd" CvTextArea="92, 670, 43, 14" CvTextArgument="08/2024" CvType="Text" DesignTimeRectangle="92, 671, 43, 13" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='' aaname='{0}' check:innerText='{0}' /&gt;&quot;, In_Str_DataExecucao)]" Guid="4fb358d3-6406-486e-ac46-552727334a06" ImageBase64="" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <uix:NGetText DisplayName="Get Text 'Dados Cadastrais'" sap:VirtualizedContainerService.HintSize="518,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" TextString="[Str_DataApuracaoCapturada]" Version="V4">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="f988aec9-70dc-4350-b3d5-fa820f9f9b5d" CvTextArea="1532, 396, 156, 14" CvType="AnyWordGroup" DesignTimeRectangle="1533, 396, 155, 13" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl id='cphConteudo_TabelaVinculacoesDARF_InformacoesDCTF_lblPeriodoApuracao' tag='SPAN' type='' class='label-informacoes-contribuinte' /&gt;" Guid="cadf6ab8-40fb-4d25-a710-2d71e162e01c" InformativeScreenshot="ccb804439081ed42f2fc83c14de71e4f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CVScreenId="f988aec9-70dc-4350-b3d5-fa820f9f9b5d" CvElementArea="1376, 327, 18, 18" CvTextArea="1274, 329, 106, 13" CvTextArgument="Dados Cadastrais" CvType="ArrowButton" DesignTimeRectangle="1260, 320, 144, 32" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl tag='A' type='' class='dropdown-toggle' aaname='Dados Cadastrais' check:innerText='Dados Cadastrais' /&gt;" Guid="a41b196d-d00b-49c8-aeb5-b6bc8bca6487" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <If Condition="[Str_DataApuracaoCapturada.contains(In_Str_DataExecucao.trim)]" sap:VirtualizedContainerService.HintSize="518,1671" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,340" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Competencia de apuração selecionada corretamente.&quot;]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[Out_Bool_EntrouDeclaracoes]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,1168" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Erro na competencia de apuração selecionada.&quot;]" />
+                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Durante a execução da empresa &quot; + In_Str_NomeNibo + &quot; o Robô não conseguiu entrar na competência de apuração correta que deveria ser &quot; + In_Str_DataExecucao + &quot;.&quot;]" DisplayName="Send SMTP Mail Message" Email="jimmybot@climec.com.br" EnableSSL="True" From="jimmybot@climec.com.br" sap:VirtualizedContainerService.HintSize="450,178" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" Password="Climec&amp;24" Port="465" SecureConnection="Auto" Server="mail.climec.com.br" Subject="Erro ao selecionar competencia de apuração no ECAC." To="pedro.torres@one4.com.br">
+                                <ui:SendMail.Files>
+                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                </ui:SendMail.Files>
+                              </ui:SendMail>
+                              <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[Out_Bool_EntrouDeclaracoes]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Sair com Segurança'" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/" CVScreenId="ecf62f5c-de85-4c79-adb2-faf7b428b10e" CvElementArea="1797, 126, 114, 21" CvTextArea="1803, 130, 101, 13" CvTextArgument="Sair com Segurança" CvType="Button" DesignTimeRectangle="1798, 128, 112, 18" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='sairSeguranca' tag='SPAN' type='' class='botaoAzul' aaname='Sair com Segurança ' check:innerText='Sair com Segurança' /&gt;" Guid="6688e24f-09d5-4760-a4e5-a2aa42d58dfa" InformativeScreenshot="9eeeb6e8ac67e6b60489b48d0f939d57.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="ecf62f5c-de85-4c79-adb2-faf7b428b10e" CvTextArea="256, 206, 105, 12" CvTextArgument="LOCALIZAR SERVIÇO" CvType="Text" DesignTimeRectangle="257, 207, 1121, 10" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Localizar Serviço' check:innerText='LOCALIZAR SERVIÇO' /&gt;" Guid="650c14b9-24bd-4d83-b71e-c37a14fa780a" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: - ecac" sap:VirtualizedContainerService.HintSize="450,416" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="c67296d8-805a-4d69-9e55-fd2ea1a2fe5a" Version="V2">
+                                <uix:NApplicationCard.Body>
+                                  <ActivityAction x:TypeArguments="x:Object">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:CloseApplication DisplayName="Close Application - ecac" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="CloseApplication_3">
+                                        <ui:CloseApplication.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b640ab3f-d709-4c48-ba15-dc8890f2d919">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:CloseApplication.Target>
+                                      </ui:CloseApplication>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </uix:NApplicationCard.Body>
+                                <uix:NApplicationCard.TargetApp>
+                                  <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="03f1b87999c0748cbf6c9114c12e3ced.jpg" Selector="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" Title="eCAC - Centro Virtual de Atendimento" Url="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" />
+                                </uix:NApplicationCard.TargetApp>
+                              </uix:NApplicationCard>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="não passou" sap:VirtualizedContainerService.HintSize="484,1176" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Erro ao passar captcha.&quot;]" />
+                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Durante a execução da empresa &quot; + In_Str_NomeNibo + &quot; o Robô não conseguiu passar o captcha dentro do sistema ECAC, favor verificar.&quot;]" DisplayName="Send SMTP Mail Message" Email="jimmybot@climec.com.br" EnableSSL="True" From="jimmybot@climec.com.br" sap:VirtualizedContainerService.HintSize="450,184" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="Climec&amp;24" Port="465" SecureConnection="Auto" Server="mail.climec.com.br" Subject="Erro Captcha dentro do ECAC" To="pedro.torres@one4.com.br">
+                          <ui:SendMail.Files>
+                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                          </ui:SendMail.Files>
+                        </ui:SendMail>
+                        <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[Out_Bool_EntrouDeclaracoes]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Sair com Segurança'" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd4c2c70-cc99-455b-88c7-f2113aa62cf1" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/" CVScreenId="ecf62f5c-de85-4c79-adb2-faf7b428b10e" CvElementArea="1797, 126, 114, 21" CvTextArea="1803, 130, 101, 13" CvTextArgument="Sair com Segurança" CvType="Button" DesignTimeRectangle="1798, 128, 112, 18" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='sairSeguranca' tag='SPAN' type='' class='botaoAzul' aaname='Sair com Segurança ' check:innerText='Sair com Segurança' /&gt;" Guid="6688e24f-09d5-4760-a4e5-a2aa42d58dfa" InformativeScreenshot="9eeeb6e8ac67e6b60489b48d0f939d57.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="ecf62f5c-de85-4c79-adb2-faf7b428b10e" CvTextArea="256, 206, 105, 12" CvTextArgument="LOCALIZAR SERVIÇO" CvType="Text" DesignTimeRectangle="257, 207, 1121, 10" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Localizar Serviço' check:innerText='LOCALIZAR SERVIÇO' /&gt;" Guid="650c14b9-24bd-4d83-b71e-c37a14fa780a" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: - ecac" sap:VirtualizedContainerService.HintSize="450,416" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="c67296d8-805a-4d69-9e55-fd2ea1a2fe5a" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:CloseApplication DisplayName="Close Application - ecac" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                                  <ui:CloseApplication.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b640ab3f-d709-4c48-ba15-dc8890f2d919">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:CloseApplication.Target>
+                                </ui:CloseApplication>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="03f1b87999c0748cbf6c9114c12e3ced.jpg" Selector="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" Title="eCAC - Centro Virtual de Atendimento" Url="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" />
+                          </uix:NApplicationCard.TargetApp>
+                        </uix:NApplicationCard>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="8683a1ca-2c17-451f-8f7f-51993622344c" CvTextArea="32, 596, 187, 20" CvTextArgument="Relação de Declarações" CvType="Text" DesignTimeRectangle="23, 596, 205, 16" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl type='' tag='H1' class='titulo-pagina' aaname='Relação de Declarações' check:innerText='Relação de Declarações' /&gt;" Guid="ef78a8e5-1467-4dcb-8605-b1594a782eb9" InformativeScreenshot="d7a458c9f818fb135e8482c6599d9b8a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="8683a1ca-2c17-451f-8f7f-51993622344c" CvElementArea="790, 549, 78, 32" CvTextArea="799, 558, 59, 15" CvTextArgument="Pesquisar" CvType="Button" DesignTimeRectangle="791, 551, 75, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl aaname='Pesquisar' parentid='conteudo-pagina' tag='A' type='' class='btn btn-success btn-exibe-processando' check:innerText='Pesquisar' /&gt;" Guid="b9b04902-8ece-489d-a1f1-52ac6206b20b" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://cav.receita.fazenda.gov.br/ecac/Aplicacao.aspx?id=10015&amp;origem=menu" CVScreenId="8683a1ca-2c17-451f-8f7f-51993622344c" CvTextArea="32, 596, 187, 20" CvTextArgument="Relação de Declarações" CvType="Text" DesignTimeRectangle="23, 596, 205, 16" DesignTimeScaleFactor="1" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl type='' tag='H1' class='titulo-pagina' aaname='Relação de Declarações' check:innerText='Relação de Declarações' /&gt;" Guid="ef78a8e5-1467-4dcb-8605-b1594a782eb9" InformativeScreenshot="d7a458c9f818fb135e8482c6599d9b8a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="8683a1ca-2c17-451f-8f7f-51993622344c" CvElementArea="790, 549, 78, 32" CvTextArea="799, 558, 59, 15" CvTextArgument="Pesquisar" CvType="Button" DesignTimeRectangle="791, 551, 75, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='frmApp' tag='IFRAME' /&gt;&lt;webctrl aaname='Pesquisar' parentid='conteudo-pagina' tag='A' type='' class='btn btn-success btn-exibe-processando' check:innerText='Pesquisar' /&gt;" Guid="b9b04902-8ece-489d-a1f1-52ac6206b20b" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" ContentHash="PQ8REyjyQ0iFEbHNqujDfA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbxSURBVFhHpZZtTFvnFcf9pWuypg3tmjVrGmLeEoMBG2PaJBDb2CkvyQJpvlXtFqRpmrSXT5s67a3pl0nTptXkhdAklEsCbZdG3VsrVe3AhhBCs3ZDi5ZAo21OA5hAOztNmrXhXj9n//M8j415SUe7I/30P+fh+vzPufcasC03YgF3zkzQ0zITrDLAyPshb3ImVEXTQS/NBDn3RmeClcZ0qHIvX6s/9v/HVIPbfjVU1com2kxcra2k6VovqBQM14sIVBpTAbddt/nsoTb2htlUGgWUWcYQ9dWAR0wFOPcgV8r1VMCj8AOfZ59uufzgyWES00a6sUfm8ww0cTZiuPZViLi/Qp1xrohNbV7m3ZiurXChUSzbIIO/QjDKUBlpE4r73BmdhE5ucys4V/X/HoI3h1EsvYFSjTaa9Kmm8W3aSDXPMJGmxkWTNS4BBaoer3ZhCMfSQ/Azh1FMGWU1z5ipxnIA1hq3kDUbaENlJHMxLmul49XljFDqii35LZnwucMZE4XI3khvo41Uzg1lzc1l7aIrOGO0KV3ZupAycWVLWVjbqnC/tNve/h3/nAmboqk2I7mNNpn57jfoxss9ZMYnKR3i5rskZl4la2QXWecqGcGaYn3LQ5JzHpx5BM5kTcNZ70PlS3uMbUYzjYUq1Fb6dknFxDKvr6YbJ3u0JVE8Kah/bBaYdGkqpU8xzNSLZL3jJ/OtChgxbgzhxjDQYbeqoajVXXAbu3M8LzxGzL4fBjO3io1Z39tSRuN1W+nWpTFp8JeYSd8yPqKqZ65R1T4N8qbwdYqOzsprxM0xst6ugZmLDZUOc85aDi3HEOVJGsG74H5hd4u7ZzdVANb+Jq80ZfCsBOv133TLxkein5AXhhmezso1R3ENh4h3K7PhMk1pljJOMXumpMXm7m42ALm6m4S7p1k8+Ys6ury5lN7b7BTMxGP1siFvV/l0UuLROse1eefv4C5xpC7sFdZZJ5lnS8hagtRwiWFzdTdHXScwwIkmTTO9useLIZwUe8RJN177nWy289kPqeJnyTlglNF0rutvdt6QnxFTJ4R5thhm2TgwlINS0NRQ8Yit/HhTsvz4LkpT1rWLth9spL/7yij2cIm4dWmUxuIWudF8MYnbkKTJJF7MTyZguBGGmiEJMSZInS1K2MqMr8JUImSu659/u5piVcWCN4lcnCXXTxNLA7P5dYLKoRH9QlpDRWSeKSSLQW4NaZV1gbCVdu6kUpiWGjuF1C6lj7Q30vkap2zSd/EWlaHpQtgoW7PP+zA0h3WmAEb5wjoDhgowTD7O5uABks7OHUKxk6BAqvjeUz5hxidoMpGi0p/8+zMxiscmProAkzwyB/Ogdgxhl7XKN3CdsJU8v+OvJR2NpNhBqGXuZH2+UQz2n5SbtHRcJycaO38MWD+Ful9dk59JTZ+CGRvlCnMwlyzJBrBecG4Oro/aHB0NRvGxRpqjQQ7gONYgOP/6a0/JZn/+1yyVwLwYKP1A5nP13HkvHhmH9fYWMk+vBw/B9CHBqnOyWE+vM2yOow0tIGPIyPpovQCsdPy8+ioe6rtJjh99QA6YSF0Izg/1/kdee228E4brYLYO2z6I/EGYK6y0Dqzba7MbgZziI/XJTUfqKRsH69E6wXi79ojR9/8hG//pwi0K/jJJm2CYzdeOfUjn/qlevInEu5QYLCFz4CuatTBdK9JqnX5A5hTNUX+WNz1X37rpuTraqJH5kTqRroHwGntE1/nfSgOOi5OWHIaZwEuaDr6m849bsN1aGD+QwWLt/7JUa2CNsPrXGNKcw9HeYN/Y/igxRVrTeRaisH27CPQ8Sa+MvkEX9R3hGL9+lYy/vUJP/P4H5O/wwWiNYkBr//0ytwbuFzIH2H7+f0ZFbaHWosPbKU1hG+ujxKaFhyWkNCT4ZxldwKk/FMHkS8pU6n3YVipZyFlTA/ct/k/ZHg7kFBwOxQraVOOCQyEqBKx8JpXP2ubX2Tze9TDM7hVm9F4YAlaAM605wormxLTl4sAQ9oK2YCzdMP9gkApA/qGgkHCu66XOL7+JZxxdjQHuAathuBqGUNSa2KJbvzB4iPwDtTHZ9EAt5R2sFQznafJY8XNWmR8I0ve7y8mM3I1N71EKrOgqmK4SnM9G7ob5ik83TwcPkbe/NgbIfiAg8vYHpMochvb9Kk9T076VLr+B5xxZxabQu+ZhRe6Kfbxc8+zAIM/YW2F+W/wYxi86Xs4ns28ljL4oMSMrBNdmBPStDGe+758n+G7khv3GhrCfNrT6Re6zPsF5btgn6+q2zTBZobmTzF4QuTNp9q5s/fj1z7H17QKD5Kz/9bYWDNCFAaLQJKCTp/A7PXJHItX7hZFU7wpjtu+OluVvbLP9F5lmWAkTeM7rAAAAAElFTkSuQmCC" InformativeScreenshot="2a25e7d29058ca648b3aa41551844e4f.jpg" Reference="zP9uCXjDRkqf-k3lmYOn9A/ediANy4mg02ZRFyPq-QUYA" Selector="&lt;html app='chrome.exe' title='eCAC - Centro Virtual de Atendimento' /&gt;" Title="eCAC - Centro Virtual de Atendimento" Url="https://cav.receita.fazenda.gov.br/ecac/Default.aspx" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
